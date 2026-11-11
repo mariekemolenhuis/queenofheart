@@ -14,17 +14,21 @@
 <style id="compact-music-players">
 .track-grid{gap:9px;margin-top:22px}.track{padding:12px;border-radius:10px;display:grid;grid-template-columns:42px minmax(0,1fr);gap:5px 12px;align-items:center;transition:border-color .2s,background .2s}.track .track-thumb{grid-row:1/3;width:42px;height:42px;object-fit:contain;padding:8px;background:#171319;border-radius:7px;border:1px solid #d8b77c44}.track-name{font-size:14px;margin:0;line-height:1.4}.track .qh-player{grid-column:2}.qh-player{display:flex;align-items:center;gap:9px;min-width:0;padding:8px 0}.qh-play{flex:0 0 32px;width:32px;height:32px;border-radius:50%;border:1px solid var(--gold);background:var(--gold);color:#211a19;cursor:pointer;display:grid;place-items:center;padding:0}.qh-play svg{width:15px;height:15px;fill:currentColor}.qh-play:focus-visible,.qh-seek:focus-visible{outline:2px solid var(--blush);outline-offset:3px}.qh-seek{min-width:30px;flex:1;width:100%;height:4px;accent-color:var(--gold);cursor:pointer}.qh-time{font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}.track.is-playing{border-color:var(--gold);background:#d8b77c14}.is-playing .qh-play{background:var(--blush);border-color:var(--blush)}.qh-error{font-size:12px;color:var(--blush)}.music-card .qh-player,.release-spotlight .qh-player{margin:10px 0 14px}.track audio[hidden],.music-card audio[hidden],.release-spotlight audio[hidden]{display:none!important}
 </style><style id="mobile-hero-text">
-.hero-name-break{display:none}
+.hero-name-break,.mobile-hero-portrait{display:none}
 @media(max-width:600px){
-.hero-content{padding-top:120px}
-.hero-name-break{display:block}
-.hero h1{max-width:58vw;font-size:clamp(52px,14vw,76px);line-height:1;letter-spacing:-2px}
-.hero-content>.eyebrow{max-width:58vw;line-height:1.7;letter-spacing:2px}
-.hero .sub{max-width:58vw;line-height:1.35}
+.hero{display:block;height:auto;min-height:0;max-height:none;padding-top:70px;background:var(--ink)}
+.hero:before,.hero:after{display:none}
+.mobile-hero-portrait{display:block;width:100%;height:auto;position:static}
+.hero-content{padding-top:28px;padding-bottom:28px}
+.hero-name-break{display:none}
+.hero h1{max-width:100%;font-size:clamp(56px,14vw,76px);line-height:1;letter-spacing:-2px;margin:18px 0}
+.hero-content>.eyebrow{max-width:100%;line-height:1.7;letter-spacing:2px}
+.hero .sub{max-width:100%;line-height:1.35;margin-bottom:26px}
+.hero-bottom{position:static;padding:0 6% 28px;font-size:9px;letter-spacing:2px}
 }
 </style></head><body>
 <header class="topbar"><div class="shell"><a class="brand" href="#home"><img src="q-heart-logo.png" alt="Queen of heart logo">Queen of heart</a><nav class="nav"><a href="#music">MUSIC</a><a href="#about">THE STORY</a><a href="#shop">SHOP</a><a class="nav-special" href="#connect">FOLLOW ME</a></nav></div></header>
-<main><section class="hero" id="home"><div class="shell hero-content"><div class="eyebrow">THE OFFICIAL ARTIST WEBSITE</div><h1>Queen<span class="hero-name-break"></span> of<br><em>heart.</em></h1><p class="sub">Music for the soul. Strength for the heart.</p><div class="buttons"><a class="button primary" href="#music">Explore the music <span>↗</span></a><a class="button secondary" href="https://open.spotify.com/artist/5F4zvqzKqX0c4fQmVyevqa" target="_blank" rel="noopener">Listen on Spotify ↗</a></div></div><div class="hero-bottom"><span>♥</span> SELF-LOVE · HEALING · NEW BEGINNINGS</div></section>
+<main><section class="hero" id="home"><img class="mobile-hero-portrait" src="artist-photo.jpg" alt="Queen of heart met het gouden Q-logo" width="1536" height="864" fetchpriority="high"><div class="shell hero-content"><div class="eyebrow">THE OFFICIAL ARTIST WEBSITE</div><h1>Queen<span class="hero-name-break"></span> of<br><em>heart.</em></h1><p class="sub">Music for the soul. Strength for the heart.</p><div class="buttons"><a class="button primary" href="#music">Explore the music <span>↗</span></a><a class="button secondary" href="https://open.spotify.com/artist/5F4zvqzKqX0c4fQmVyevqa" target="_blank" rel="noopener">Listen on Spotify ↗</a></div></div><div class="hero-bottom"><span>♥</span> SELF-LOVE · HEALING · NEW BEGINNINGS</div></section>
 <section class="section music" id="music"><div class="shell"><div class="eyebrow">DISCOVER THE MUSIC</div><h2>Listen. Feel. <em>Believe.</em></h2><p class="section-desc">Discover 60-second s of Queen of heart's music. Find your favorites and continue listening on Spotify.</p><article class="release-spotlight" id="good-things-find-me"><img src="good-things-find-me-cover.png" alt="Good Things Find Me — original cover" width="1536" height="1536"><div><span class="release-badge" id="coming-up-label" hidden>coming up!</span><h3>Good Things Find Me</h3><p class="section-desc">Queen of heart · 60-second preview</p><audio controls controlsList="nodownload noplaybackrate" preload="metadata" src="good-things-find-me-preview.mp3" aria-label="60-second preview of Good Things Find Me"></audio></div></article>
 <script>
 (function () {
